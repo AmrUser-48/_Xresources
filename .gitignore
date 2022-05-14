@@ -1,0 +1,10 @@
+*.pyc
+*.pyo
+*~
+*.orig
+/.cache
+/build
+.idea
+.pytest_cache
+src.zsh
+
