@@ -1,0 +1,4 @@
+# Xresources
+## xterm
+## UXterm
+## xedit
