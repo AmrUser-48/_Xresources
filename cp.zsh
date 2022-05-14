@@ -1,16 +1,19 @@
 #!/bin/env zsh
-if [ ! -f ~/.config/Xresources ]
+#copy incl files
+if [ -f ~/.config/Xresources ] 
 then
-		mkdir -p ~/.config/Xresources
-		cp .config/Xresources/* -t ~/.config/Xresources
+		mv -v ~/.config/Xresources ~/.config/"Xresources.BAK.$(date -u +"%d-%h-%Y %r")"
+		cp -vr .config/Xresources -t ~/.config/
 else
-		exit
+		mkdir -p ~/.config/Xresources
+		cp -vr .config/Xresources -t ~/.config/
 fi
 
+#copy & bacup config
 if [ -f ~/.Xresources ]
 then
-		mv ~/.Xresources ~/.Xresources.BAK_"$(date -u +"%d-%h-%Y %r")"
-		cp .Xresources -t ~/
+		mv -v ~/.Xresources ~/".Xresources.BAK.$(date -u +"%d-%h-%Y %r")"
+		cp -v .Xresources ~/
 else
-		cp .Xresources -t ~/
+		cp -v .Xresources ~/
 fi
