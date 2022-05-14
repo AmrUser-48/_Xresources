@@ -6,7 +6,7 @@
 
 
 
-``` xdefaults
+``` sh
 !!  @@@  @@@  @@@@@@@   @@@@@@@@   @@@@@@    @@@@@@ 
 !!  @@@  @@@  @@@@@@@@  @@@@@@@@  @@@@@@@   @@@@@@@@
 !!  @@!  !@@  @@!  @@@  @@!       !@@       @@!  @@@
@@ -28,25 +28,6 @@
     Xcursor.size:	16
 	Xft.antialias:	true
 
-!! Xedit
-	xedit*.foreground:	#F8F8F2
-	xedit*background:	#1e1f29
-	xedit*.color0:	#000000
-	xedit*.color8:	#4D4D4D
-	xedit*.color1:	#FF5555
-	xedit*.color9:	#FF6E67
-	xedit*.color2:	#50FA7B
-	xedit*.color10:	#5AF78E
-	xedit*.color3:	#F1FA8C
-	xedit*.color11:	#F4F99D
-	xedit*.color4:	#BD93F9
-	xedit*.color12:	#CAA9FA
-	xedit*.color5:	#FF79C6
-	xedit*.color13:	#FF92D0
-	xedit*.color6:	#8BE9FD
-	xedit*.color14:	#9AEDFE
-	xedit*.color7:	#BFBFBF
-	xedit*.color15:	#E6E6E6
 
 !! Includes
 #include ".config/Xresources/xterm"
@@ -55,6 +36,7 @@
 #include ".config/Xresources/UXterm"
 #include ".config/Xresources/URxvt"
 #include ".config/Xresources/koi8rxterm"
+#include ".config/Xresources/xedit"
 
 !!	vim: ft=xdefaults cc=56 tw=55 ts=4 sw=4 sts=4 et sr
 ```
