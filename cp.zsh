@@ -1,6 +1,7 @@
 #!/bin/env zsh
+[ -f .cmdc ] && source .cmdc
 #copy incl files
-if [ -f ~/.config/Xresources ] 
+if [ -d ~/.config/Xresources ] 
 then
 		mv -v ~/.config/Xresources ~/.config/"Xresources.BAK.$(date -u +"%d-%h-%Y %r")"
 		cp -vr .config/Xresources -t ~/.config/
