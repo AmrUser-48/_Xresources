@@ -18,15 +18,15 @@
 !!   ::  :::  ::   :::   :: ::::  :::: ::   ::::: ::
 !!   :   ::    :   : :  : :: ::   :: : :     : :  :
 !! Fonts
-	Xft.dpi:		96
-	Xft.autohint:	0
-	Xft.lcdfilter:	lcddefault
-	Xft.hintstyle:	hintfull
-	Xft.hinting:	1
-	Xft.rgba:   rgb
-    Xcursor.theme:	Default 
-    Xcursor.size:	16
-	Xft.antialias:	true
+Xft.dpi:		96
+Xft.autohint:	0
+Xft.lcdfilter:	lcddefault
+Xft.hintstyle:	hintfull
+Xft.hinting:	1
+Xft.rgba:       rgb
+Xcursor.theme:	Default 
+Xcursor.size:	16
+Xft.antialias:	true
 
 
 !! Includes
