@@ -1,0 +1,166 @@
+!!  @@@  @@@  @@@@@@@   @@@@@@@@   @@@@@@    @@@@@@ 
+!!  @@@  @@@  @@@@@@@@  @@@@@@@@  @@@@@@@   @@@@@@@@
+!!  @@!  !@@  @@!  @@@  @@!       !@@       @@!  @@@
+!!  !@!  @!!  !@!  @!@  !@!       !@!       !@!  @!@
+!!   !@@!@!   @!@!!@!   @!!!:!    !!@@!!    @!@  !@!
+!!    @!!!    !!@!@!    !!!!!:     !!@!!!   !@!  !!!
+!!   !: :!!   !!: :!!   !!:            !:!  !!:  !!!
+!!  :!:  !:!  :!:  !:!  :!:           !:!   :!:  !:!
+!!   ::  :::  ::   :::   :: ::::  :::: ::   ::::: ::
+!!   :   ::    :   : :  : :: ::   :: : :     : :  :
+!!_______________________________________________________________
+
+	XTerm*fastScroll: True
+
+    XTerm.termName: xterm-256color
+!!xterm*maximized: true
+!! Fonts 
+!!  set font and fontsize
+!!  XTerm*faceName: DejaVuSansMono Nerd Font Mono
+    XTerm*faceName: VictorMono Nerd Font Mono
+    XTerm*faceSize: 12
+    xterm*renderFont: true
+!!  XTerm*font: -*-terminus-medium-r-normal--18-*-*-*-*-*-iso10646-1
+!!  XTerm*font: -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
+
+!! 	xterm*locale: true 
+!!	xterm*utf: on
+!!	xterm*utf8: on
+!!	ISO8859-1
+    !VT Font Menu: Unreadable
+	xterm*faceSize1: 8
+    !VT font menu: Tiny
+    xterm*faceSize2: 10
+    !VT font menu: Medium
+    xterm*faceSize3: 14
+    !VT font menu: Large
+    xterm*faceSize4: 16
+    !VT font menu: Huge
+    xterm*faceSize5: 22
+
+
+
+! Ensure that your locale is set up for UTF-8. If you do not use UTF-8, you may need to force xterm to more strictly follow your locale by setting
+	XTerm.vt100.locale: true
+
+!! Cursor
+!! pointer and cursor (blinking and color)
+    XTerm*pointerColor: white
+    XTerm*pointerColorBackground: black
+    XTerm*cursorColor: grey
+    XTerm*cursorBlink: false
+
+!! Selecting Text
+!! Only select text
+	XTerm*highlightSelection: true
+!! Remove trailing spaces
+	XTerm*trimSelection: true
+
+!! Scrolling
+!! Skroll bottom on key press
+!!	XTterm*scrollTtyKeypress: true
+	XTerm*scrollOnKeypress: true
+!! Use: Shift-Pageup / Shift-Pagedown to scroll or mousewheel
+!! Lines of output that you can scroll back over
+    XTerm*saveLines: 56384
+
+!! Do not scroll when there is new input e.g. tail -f /var/syslog
+    XTerm*scrollTtyOutput: false
+!! Keybinding
+!! - change fontsize on the fly (ctrl+plus = increase ; ctrl+minus = decrease, ctrl+0 = default)
+!! - copy/paste hotkey (ctrl+shift+c = copy ; ctrl+shift+v = paste)
+!! - open url (clickable links)
+!!   1) double click to highlight the full url
+!!   2) Shift + click it to open it
+	XTerm.vt100.translations: #override \n\
+	Ctrl <Key> minus: smaller-vt-font() \n\
+	Ctrl <Key> plus: larger-vt-font() \n\
+	Ctrl <Key> 0: set-vt-font(d) \n\
+	Ctrl Shift <Key>C: copy-selection(PRIMARY) \n\
+	Ctrl Shift <Key>V: insert-selection(PRIMARY) \n\
+    
+!!
+!! enable copy/paste hotkey to work (shift+insert = paste ; mouse highlight = copy)
+    XTerm*selectToClipboard: true
+!! disable fullscreen hotkey alt+enter (hotkey conflicts with weechat, midnight commander ...etc)
+    XTerm*fullscreen: never
+!! enable alt key to work
+    XTerm*metaSendsEscape: true
+!! Fix the backspace key (for Emacs)
+    XTerm.vt100.backarrowKey: false
+    XTerm.ttyModes: erase ^?
+
+!! Tips: Left and right selection (text selection using left button for beginning and right button for end)
+!! Tips: Triple Click ( 1 click = nothing, 2 click = select word, 3 click = select line )
+!
+!! XTerm*on3Clicks: regex [[:alpha:]]+://([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
+	XTerm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
+
+!! <BtnUp>:select-end(SELECT, CUT_BUFFER0) \n\
+!! Ctrl <Btn4Down>:scroll-back(1,halfpage,m) \n\
+!! <Btn4Down>:scroll-back(5,line,m) \n\
+!! Ctrl <Btn5Down>:scroll-forw(1,halfpage,m) \n\
+!! <Btn5Down>:scroll-forw(5,line,m) \n\
+
+!!    Ctrl <Key>M: maximize() \n\
+!!    Ctrl <Key>R: restore() \n\
+!!                 Shift <KeyPress> Prior:scroll-back(1,halfpage) \n\
+!!                  Shift <KeyPress> Next:scroll-forw(1,halfpage) \n\
+!!                Shift <KeyPress> Select:select-cursor-start() \
+!!                                        select-cursor-end(SELECT, CUT_BUFFER0) \n\
+!!                Shift <KeyPress> Insert:insert-selection(SELECT, CUT_BUFFER0) \n\
+!!                        Alt <Key>Return:fullscreen() \n\
+!!               <KeyRelease> Scroll_Lock:scroll-lock() \n\
+!!                       ~Meta <KeyPress>:insert-seven-bit() \n\
+!!                        Meta <KeyPress>:insert-eight-bit() \n\
+!!                       !Ctrl <Btn1Down>:popup-menu(mainMenu) \n\
+!!                       ~Meta <Btn1Down>:select-start() \n\
+!!                     ~Meta <Btn1Motion>:select-extend() \n\
+!!                       !Ctrl <Btn2Down>:popup-menu(vtMenu) \n\
+!!                 ~Ctrl ~Meta <Btn2Down>:ignore() \n\
+!!                        Meta <Btn2Down>:clear-saved-lines() \n\
+!!                   ~Ctrl ~Meta <Btn2Up>:insert-selection(SELECT, CUT_BUFFER0) \n\
+!!                       !Ctrl <Btn3Down>:popup-menu(fontMenu) \n\
+!!                 ~Ctrl ~Meta <Btn3Down>:start-extend() \n\
+!!                     ~Meta <Btn3Motion>:select-extend() \n\
+!!                        Ctrl <Btn4Down>:scroll-back(1,halfpage,m) \n\
+!!                             <Btn4Down>:scroll-back(5,line,m)     \n\
+!!                        Ctrl <Btn5Down>:scroll-forw(1,halfpage,m) \n\
+!!                                <BtnUp>:select-end(SELECT, CUT_BUFFER0) \n\
+!!                              <BtnDown>:ignore()
+
+
+
+!! set fontsize
+!! xterm*font:     *-fixed-*-*-*-12-*
+!! set font
+!! xterm*faceName: Monospace
+
+!! Dracula Xresources palette
+XTerm*.foreground: #F8F8F2
+XTerm*.background: #282A36
+XTerm*.color0:     #000000
+XTerm*.color8:     #4D4D4D
+XTerm*.color1:     #FF5555
+XTerm*.color9:     #FF6E67
+XTerm*.color2:     #50FA7B
+XTerm*.color10:    #5AF78E
+XTerm*.color3:     #F1FA8C
+XTerm*.color11:    #F4F99D
+XTerm*.color4:     #BD93F9
+XTerm*.color12:    #CAA9FA
+XTerm*.color5:     #FF79C6
+XTerm*.color13:    #FF92D0
+XTerm*.color6:     #8BE9FD
+XTerm*.color14:    #9AEDFE
+XTerm*.color7:     #BFBFBF
+XTerm*.color15:    #E6E6E6
+
+!! #include ".config/Xresources/xterm"
+!! #include ".config/Xresources/MTerm"
+!! #include ".config/Xresources/ITerm"
+!! #include ".config/Xresources/UXterm"
+!! #include ".config/Xresources/URxvt"
+!! #include ".config/Xresources/koi8rxterm"
+
+!! vim: ft=xdefaults ts=4
