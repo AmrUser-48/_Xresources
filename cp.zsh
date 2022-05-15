@@ -18,3 +18,4 @@ then
 else
 		cp -v .Xresources ~/
 fi
+xrdb -l ~/.Xresources
